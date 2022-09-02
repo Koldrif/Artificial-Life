@@ -5,6 +5,19 @@
 #include <random>
 #include "glm/vec3.hpp"
 
+class Particle : public sf::RectangleShape
+{
+public:
+    // Write a constructor
+    float side;
+    sf::Vector2f Velocity;
+};
+
+void Draw(sf::RenderWindow* window, Particle* particle)
+{
+    window->draw(*particle);
+}
+
 int main() {
     sf::RenderWindow window(sf::VideoMode(640, 480), "SFML Application");
     sf::RectangleShape shape;
@@ -18,15 +31,7 @@ int main() {
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> rndNum(0,640); // distribution in range [1, 6]
 
-    std::cout << rndNum(rng) << std::endl;
-
     std::vector<sf::Transformable*> shapes{};
-
-    for (size_t i{}; i < 100; ++i)
-    {
-        shapes.push_back(new sf::RectangleShape{radius});
-        shapes[i]->setPosition((float)rndNum(rng), (float)rndNum(rng));
-    }
 
 
     while (window.isOpen())
@@ -55,3 +60,5 @@ int main() {
         window.display();
     }
 }
+
+
