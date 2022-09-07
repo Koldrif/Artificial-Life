@@ -7,9 +7,9 @@ set(SOURCE_FILES main.cpp)
 
 add_executable(Artificial_Life main.cpp)
 
-include_directories("${CMAKE_CURRENT_LIST_DIR}/cmake_modules/SFML-2.5.1/include")
+include_directories("C:/include/SFML-2.5.1/include")
 
-set(SFML_DIR ${CMAKE_CURRENT_LIST_DIR}/cmake_modules/SFML-2.5.1/lib/cmake/SFML)
+set(SFML_DIR C:/includes/SFML-2.5.1/lib/cmake/SFML)
 
 find_package(SFML 2.5 REQUIRED system window graphics network audio)
 
